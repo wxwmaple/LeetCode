@@ -54,16 +54,15 @@ class Solution {
         return isMirror(root,root);
     }
     public boolean isMirror(TreeNode p,TreeNode q){
-        if(p==null && q==null){
+        if(p==null && q==null){//都空，则对称
             return true;
         }
-        if(p==null||q==null){
-            return false;
-        }
-        if(p.val==q.val){
+        if(p!=null && q!=null && p.val==q.val){//值相等，则递归左右
             return isMirror(q.left,p.right)&&isMirror(p.left,q.right);
         }
-        return false;
+        else{
+            return false;
+        }
     }
 }
 

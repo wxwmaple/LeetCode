@@ -72,10 +72,10 @@ class TreeNode{
 class Solution {
 
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        if(p==null && q==null){
+        if(p==null && q==null){//都空，则相同
             return true;
         }
-        if(p!=null &&q!=null && p.val==q.val){
+        if(p!=null &&q!=null && p.val==q.val){//值相同，则递归左右子树
             return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
         }
         else {
